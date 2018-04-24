@@ -1,0 +1,6 @@
+rootProject.name = 'cre-component-runtime'
+
+boolean inComposite = gradle.parent != null
+if (!inComposite) {
+    includeBuild '../cre-commons'
+}
