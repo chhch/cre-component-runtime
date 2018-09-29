@@ -8,7 +8,7 @@ internal class UnloadComponent(context: ComponentContextBase) : ComponentState {
 
     override val state = ComponentState.State.UNLOADED
     override var scope: Lifecycle = context.scope
-        set(value) = throw IllegalStateException("Component is already unloaded")
+        set(value) = throw IllegalStateException("Can't set '$value'. Component is already unloaded")
 
     private val executor = context.executorService
     val task = executor.unload()
